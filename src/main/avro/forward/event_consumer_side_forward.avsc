@@ -2,7 +2,6 @@
  "type": "record",
  "name": "ConsumerEvent",
  "fields": [
-     {"name": "id", "type": "string"},
-     {"name": "description",  "type": ["null", "string"], "default" : null}
-   ]
+     {"name": "id", "type": "string"}
+  ]
 }

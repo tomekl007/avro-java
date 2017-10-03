@@ -2,7 +2,6 @@
  "type": "record",
  "name": "ProducedEvent",
  "fields": [
-     {"name": "id", "type": "string"},
-     {"name": "description",  "type": ["string", "null"]}
+     {"name": "id", "type": "string"}
    ]
 }
