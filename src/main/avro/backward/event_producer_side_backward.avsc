@@ -3,6 +3,6 @@
  "name": "ProducedEvent",
  "fields": [
      {"name": "id", "type": "string"},
-     {"name": "description",  "type": "string"}
+     {"name": "description",  "type": ["string", "null"]}
    ]
 }

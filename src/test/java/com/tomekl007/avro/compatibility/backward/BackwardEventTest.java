@@ -21,7 +21,7 @@ public class BackwardEventTest {
     @Test
     public void givenEvent_whenProducerIsAddingNewOptionalField_thenConsumerShouldReadMessageInBackwardCompatibleWay() throws IOException {
         //given
-        ProducedEvent producedEvent = ProducedEvent.newBuilder().setId("id").build();
+        ProducedEvent producedEvent = ProducedEvent.newBuilder().setDescription("desc").setId("id").build();
         String path = "events_test_backward.avro";
 
         //when
