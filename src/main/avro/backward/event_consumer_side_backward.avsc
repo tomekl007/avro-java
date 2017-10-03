@@ -1,0 +1,7 @@
+{"namespace": "com.tomekl007.avro.compatibility.backward",
+ "type": "record",
+ "name": "ConsumerEvent",
+ "fields": [
+     {"name": "id", "type": "string"}
+  ]
+}

@@ -1,0 +1,7 @@
+{"namespace": "com.tomekl007.avro.compatibility.forward",
+ "type": "record",
+ "name": "ProducedEvent",
+ "fields": [
+     {"name": "id", "type": "string"}
+  ]
+}

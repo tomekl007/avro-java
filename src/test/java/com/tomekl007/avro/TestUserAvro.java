@@ -33,8 +33,8 @@ public class TestUserAvro {
 
         //when
         // Serialize user1, user2 and user3 to disk
-        DatumWriter<User> userDatumWriter = new SpecificDatumWriter<User>(User.class);
-        DataFileWriter<User> dataFileWriter = new DataFileWriter<User>(userDatumWriter);
+        DatumWriter<User> userDatumWriter = new SpecificDatumWriter<>(User.class);
+        DataFileWriter<User> dataFileWriter = new DataFileWriter<>(userDatumWriter);
         dataFileWriter.create(user1.getSchema(), new File("users.avro"));
         dataFileWriter.append(user1);
         dataFileWriter.append(user2);
@@ -42,9 +42,9 @@ public class TestUserAvro {
         dataFileWriter.close();
 
         // Deserialize Users from disk
-        DatumReader<User> userDatumReader = new SpecificDatumReader<User>(User.class);
-        DataFileReader<User> dataFileReader = new DataFileReader<User>(new File("users.avro"), userDatumReader);
-        List<User> result = new LinkedList<User>();
+        DatumReader<User> userDatumReader = new SpecificDatumReader<>(User.class);
+        DataFileReader<User> dataFileReader = new DataFileReader<>(new File("users.avro"), userDatumReader);
+        List<User> result = new LinkedList<>();
         while (dataFileReader.hasNext()) {
             result.add(dataFileReader.next());
         }
