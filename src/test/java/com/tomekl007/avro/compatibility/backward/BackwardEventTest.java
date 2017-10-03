@@ -18,28 +18,28 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class BackwardEventTest {
-//    @Test
-//    public void givenEvent_whenProducerIsAddingNewOptionalField_thenConsumerShouldReadMessageInBackwardCompatibleWay() throws IOException {
-//        //given
-//        ProducedEvent producedEvent = ProducedEvent.newBuilder().setDescription("desc").setId("id").build();
-//        String path = "events_test_backward.avro";
-//
-//        //when
-//        DatumWriter<ProducedEvent> eventDatumWriter = new SpecificDatumWriter<>(ProducedEvent.class);
-//        DataFileWriter<ProducedEvent> dataFileWriter = new DataFileWriter<>(eventDatumWriter);
-//        dataFileWriter.create(producedEvent.getSchema(), new File(path));
-//        dataFileWriter.append(producedEvent);
-//        dataFileWriter.close();
-//
-//        //and when consumer read in backward compatible manner
-//        DatumReader<ConsumerEvent> eventDatumReader = new SpecificDatumReader<>(ConsumerEvent.class);
-//        DataFileReader<ConsumerEvent> dataFileReader = new DataFileReader<>(new File(path), eventDatumReader);
-//        List<ConsumerEvent> result = new LinkedList<>();
-//        while (dataFileReader.hasNext()) {
-//            result.add(dataFileReader.next());
-//        }
-//
-//        //then
-//        assertThat(result.get(0).getId().toString()).isEqualTo(producedEvent.getId().toString());
-//    }
+    @Test
+    public void givenEvent_whenProducerIsAddingNewOptionalField_thenConsumerShouldReadMessageInBackwardCompatibleWay() throws IOException {
+        //given
+        ProducedEvent producedEvent = ProducedEvent.newBuilder().setId("id").build();
+        String path = "events_test_backward.avro";
+
+        //when
+        DatumWriter<ProducedEvent> eventDatumWriter = new SpecificDatumWriter<>(ProducedEvent.class);
+        DataFileWriter<ProducedEvent> dataFileWriter = new DataFileWriter<>(eventDatumWriter);
+        dataFileWriter.create(producedEvent.getSchema(), new File(path));
+        dataFileWriter.append(producedEvent);
+        dataFileWriter.close();
+
+        //and when consumer read in backward compatible manner
+        DatumReader<ConsumerEvent> eventDatumReader = new SpecificDatumReader<>(ConsumerEvent.class);
+        DataFileReader<ConsumerEvent> dataFileReader = new DataFileReader<>(new File(path), eventDatumReader);
+        List<ConsumerEvent> result = new LinkedList<>();
+        while (dataFileReader.hasNext()) {
+            result.add(dataFileReader.next());
+        }
+
+        //then
+        assertThat(result.get(0).getId().toString()).isEqualTo(producedEvent.getId().toString());
+    }
 }
