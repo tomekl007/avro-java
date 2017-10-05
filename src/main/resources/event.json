@@ -1,0 +1,11 @@
+{
+  "name": "Michael",
+  "surname": null,
+  "age": 12,
+  "payment": 24.43,
+  "hasKids": true,
+  "favouriteMovies": [
+    "batman",
+    "lord of the rings"
+  ]
+}

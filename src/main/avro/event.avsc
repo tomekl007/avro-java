@@ -1,0 +1,12 @@
+{"namespace": "com.tomekl007.avro",
+ "type": "record",
+ "name": "Event",
+ "fields": [
+     {"name": "name", "type": "string"},
+     {"name": "surname",  "type": ["null", "string"], "default": null},
+     {"name": "age", "type": "int"},
+     {"name": "payment", "type": "double"},
+     {"name": "hasKids", "type": "boolean"},
+     {"name": "favouriteMovies", "type" : { "type": "array", "items" : "string" } }
+ ]
+}
