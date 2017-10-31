@@ -2,5 +2,13 @@
  "type": "record",
  "name": "Event",
  "fields": [
+    {"name": "name", "type": "string"},
+    {"name": "quantity", "type" : "int"},
+    {"name": "user_id", "type": "string"},
+    {"name": "age", "type": "int"},
+    {"name": "amount", "type": "double"},
+    {"name": "year", "type": "string"},
+    {"name": "month", "type": "string"},
+    {"name": "day", "type": "string"}
  ]
 }
