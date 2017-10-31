@@ -1,0 +1,6 @@
+{"namespace": "com.tomekl007.avro.partitioning",
+ "type": "record",
+ "name": "Event",
+ "fields": [
+ ]
+}
