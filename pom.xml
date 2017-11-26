@@ -27,6 +27,11 @@
             <version>3.8.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>${protobuf.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -58,6 +63,10 @@
             </plugin>
         </plugins>
     </build>
+
+    <properties>
+        <protobuf.version>3.2.0</protobuf.version>
+    </properties>
 
 
 </project>
