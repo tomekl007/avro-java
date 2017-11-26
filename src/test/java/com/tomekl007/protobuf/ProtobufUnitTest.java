@@ -50,13 +50,7 @@ public class ProtobufUnitTest {
         int id = new Random().nextInt();
         String name = "Michael Program";
         String number = "01234567890";
-        AddressBookProtos.Person person =
-                AddressBookProtos.Person.newBuilder()
-                        .setId(id)
-                        .setName(name)
-                        .setEmail(email)
-                        .addNumbers(number)
-                        .build();
+        AddressBookProtos.Person person = null;//todo create proper person object
 
         //when
         AddressBookProtos.AddressBook addressBook = AddressBookProtos.AddressBook.newBuilder().addPeople(person).build();
