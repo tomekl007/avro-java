@@ -85,7 +85,11 @@ public class ProtobufUnitTest {
         int id = new Random().nextInt();
         String name = "Michael Program";
         String number = "01234567890";
-        AddressBookProtos.Person person =  null;
-
+        AddressBookProtos.Person person =
+                AddressBookProtos.Person.newBuilder()
+                        .setId(id)
+                        .setEmail(email)
+                        .addNumbers(number)
+                        .build();
     }
 }
