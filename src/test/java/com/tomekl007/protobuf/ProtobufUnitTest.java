@@ -1,6 +1,7 @@
 package com.tomekl007.protobuf;
 
 
+import com.google.protobuf.UninitializedMessageException;
 import org.junit.After;
 import org.junit.Test;
 
@@ -74,6 +75,17 @@ public class ProtobufUnitTest {
         assertEquals(deserialized.getPeople(0).getName(), name);
         assertEquals(deserialized.getPeople(0).getNumbers(0), number);
 
+
+    }
+
+    @Test(expected = UninitializedMessageException.class)
+    public void creatingPersonWithWithoutRequiredField_shouldThrowException() throws IOException {
+        //given
+        String email = "j@baeldung.com";
+        int id = new Random().nextInt();
+        String name = "Michael Program";
+        String number = "01234567890";
+        AddressBookProtos.Person person =  null;
 
     }
 }
